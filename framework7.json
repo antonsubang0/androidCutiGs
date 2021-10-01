@@ -1,0 +1,25 @@
+{
+  "cwd": "/media/anton/Data/npm/hybrid/Cuti",
+  "type": [
+    "capacitor"
+  ],
+  "name": "ACPIGS",
+  "framework": "react",
+  "template": "tabs",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false,
+  "pkg": "io.f7anton.acpigs",
+  "capacitor": {
+    "platforms": [
+      "android"
+    ]
+  }
+}

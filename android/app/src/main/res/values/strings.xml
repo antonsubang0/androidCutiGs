@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ACPIGS</string>
+    <string name="title_activity_main">ACPIGS</string>
+    <string name="package_name">io.f7lar.acpigs</string>
+    <string name="custom_url_scheme">io.f7lar.acpigs</string>
+</resources>

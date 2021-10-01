@@ -1,0 +1,13 @@
+{
+  "appId": "io.f7lar.acpigs",
+  "appName": "ACPIGS",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
