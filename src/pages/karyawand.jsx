@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Page, Navbar, List, ListItem, Icon, ListInput, Button, Row, Col, f7 } from 'framework7-react';
+import { Page, Navbar, List, ListItem, Icon, ListInput, Button, Row, Col, f7, NavRight } from 'framework7-react';
 import axios from 'axios';
+import { pdfKaryawan } from '../pdf';
 
 const KaryawanD = ({f7router}) => {
   const url = 'https://cuti-express-js-mongo-atlas.vercel.app';
@@ -15,14 +16,15 @@ const KaryawanD = ({f7router}) => {
         localStorage.removeItem('token');
         f7router.navigate('/catalog/');
       } else {
-        const dataxxx= res.data.sort((a,b)=> {
-          if (a.nama < b.nama)
-            return -1;
-          if (a.nama > b.nama)
-            return 1;
-          return 0;
+        const dataxx1= res.data.sort((a, b)=>{ 
+          if (a.bagian < b.bagian){ return -1 } else if (a.bagian > b.bagian){ return +1 } else { return 0 }
         });
-        setdaftarKaryawan(dataxxx); setdataApi(dataxxx);
+        const dataxx2= dataxx1.sort((a, b)=>{ 
+          if (a.bagian === b.bagian) {
+            if (a.nama < b.nama){ return -1 } else if (a.nama > b.nama){ return +1 } else { return 0 }
+          }
+        });
+        setdaftarKaryawan(dataxx2); setdataApi(dataxx2);
       }
     });
   }
@@ -68,6 +70,9 @@ const KaryawanD = ({f7router}) => {
   const inputHandle = (e) =>{
     setdaftarKaryawan(dataApi.filter((data)=> {return data.nama.toLowerCase().includes(e.target.value.toLowerCase())}));
   }
+  const pdfKaryawanAct = () => {
+    pdfKaryawan(dataApi);
+  }
   useEffect(()=>{
     f7.dialog.progress();
     if (!localStorage.getItem('token')) {
@@ -77,7 +82,11 @@ const KaryawanD = ({f7router}) => {
   },[]);
   return (
     <Page name="form">
-      <Navbar title="Daftar Karyawan" backLink="Back"></Navbar>
+      <Navbar title="Daftar Karyawan" backLink="Back">
+        <NavRight>
+          <Button onClick={pdfKaryawanAct}><Icon f7="printer"></Icon></Button>
+        </NavRight>
+      </Navbar>
       <Row className='rownam'><Col></Col><Col><Button onClick={() => f7router.navigate('/tkaryawan/')} bgColor='blue' color='white'>Tambah</Button></Col><Col></Col></Row>
       <List noHairlinesMd className='inputCs'>
         <ListInput
