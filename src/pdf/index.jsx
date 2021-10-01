@@ -171,7 +171,7 @@ const pdfKaryawan = (data1) => {
     pdfMake.createPdf(dd).getBase64(async (datapdf) => {
         const datex = new Date();
         FileSharer.share({
-          filename: `Cuti-${datex.toLocaleDateString('id-ID').split('/').join('-')}.pdf`,
+          filename: `Status-Cuti-${datex.toLocaleDateString('id-ID').split('/').join('-')}.pdf`,
           base64Data: datapdf,
           contentType: "application/pdf",
         })
@@ -258,7 +258,7 @@ const pdfCutii = (data2) => {
     pdfMake.createPdf(dd).getBase64(async (datapdf) => {
         const datex = new Date();
         FileSharer.share({
-          filename: `Cuti-${datex.toLocaleDateString('id-ID').split('/').join('-')}.pdf`,
+          filename: `Rekap-Cuti-${datex.toLocaleDateString('id-ID').split('/').join('-')}.pdf`,
           base64Data: datapdf,
           contentType: "application/pdf",
         })
