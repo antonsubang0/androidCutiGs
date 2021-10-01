@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Page, Navbar, List, ListItem, Icon, ListInput, Button, Row, Col, f7, NavRight } from 'framework7-react';
 import axios from 'axios';
 import { pdfKaryawan } from '../pdf';
+import { interstitial } from '../admob';
 
 const KaryawanD = ({f7router}) => {
   const url = 'https://cuti-express-js-mongo-atlas.vercel.app';
@@ -25,6 +26,7 @@ const KaryawanD = ({f7router}) => {
           }
         });
         setdaftarKaryawan(dataxx2); setdataApi(dataxx2);
+        interstitial();
       }
     });
   }

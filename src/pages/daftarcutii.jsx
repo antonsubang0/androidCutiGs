@@ -13,6 +13,7 @@ import {
 } from 'framework7-react';
 import axios from 'axios';
 import { pdfCutii } from '../pdf';
+import { interstitial } from '../admob';
 
 const DaftarCuti = ({f7router}) =>{
   const url = 'https://cuti-express-js-mongo-atlas.vercel.app';
@@ -35,6 +36,7 @@ const DaftarCuti = ({f7router}) =>{
           sortData(b.dateStr) - sortData(a.dateStr);
         })
         setdaftarKaryawan(data); setdataApi(data);
+        interstitial();
       }
     });
   }

@@ -14,6 +14,7 @@ import {
 } from 'framework7-react';
 import axios from 'axios';
 import { pdf } from '../pdf';
+import { interstitial } from '../admob';
 
 const HomePage = ({ f7router }) => {
   const url = 'https://cuti-express-js-mongo-atlas.vercel.app';
@@ -65,6 +66,7 @@ const HomePage = ({ f7router }) => {
       } else {
         setdatacetak(await res.data);
         setcetak(true);
+        await interstitial();
       }
     })
     .catch(() => f7.dialog.alert('Cek Ulang'));
@@ -103,6 +105,7 @@ const HomePage = ({ f7router }) => {
   }, [codeUid]);
   const setStatusBarStyleLight = async () => {
     const plt = await Device.getInfo();
+    console.log(plt);
     if (plt.platform!=='web') {
       await StatusBar.setStyle({ style: Style.Light });
       await StatusBar.setBackgroundColor({color : '#ffffff'}); 

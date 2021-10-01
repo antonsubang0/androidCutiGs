@@ -10,6 +10,7 @@ import {
   f7
 } from 'framework7-react';
 import axios from 'axios';
+import { interstitial } from '../admob';
 
 const GenerateKodeList = ({f7router}) =>{
   const url = 'https://cuti-express-js-mongo-atlas.vercel.app';
@@ -32,6 +33,7 @@ const GenerateKodeList = ({f7router}) =>{
           return 0;
         });
         setdaftarKaryawan(dataxxx); setdataApi(dataxxx);
+        interstitial();
       }
     });
   }

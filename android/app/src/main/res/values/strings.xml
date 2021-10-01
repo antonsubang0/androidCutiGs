@@ -4,4 +4,5 @@
     <string name="title_activity_main">ACPIGS</string>
     <string name="package_name">io.f7lar.acpigs</string>
     <string name="custom_url_scheme">io.f7lar.acpigs</string>
+    <string name="admob_app_id">ca-app-pub-7614489014916537~6798656809</string>
 </resources>
