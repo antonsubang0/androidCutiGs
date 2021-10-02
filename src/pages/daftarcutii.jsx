@@ -12,7 +12,7 @@ import {
   f7
 } from 'framework7-react';
 import axios from 'axios';
-import { pdfCutii } from '../pdf';
+import { pdf, pdfCutii } from '../pdf';
 import { interstitial } from '../admob';
 
 const DaftarCuti = ({f7router}) =>{
@@ -21,8 +21,8 @@ const DaftarCuti = ({f7router}) =>{
   const [dataApi, setdataApi] = useState({});
   const [daftarKaryawan, setdaftarKaryawan] = useState({});
   const sortData = (data) => {
-    const baru = data.split('-');
-    return `${baru[1]}-${baru[0]}-${baru[2]}`;
+    const baru = new Date(data);
+    return baru.getTime();
   }
   const api = async () => {
     await axios.get(url + '/', { headers: { authorization: 'AuthStr ' + token }})
@@ -33,7 +33,13 @@ const DaftarCuti = ({f7router}) =>{
         f7router.navigate('/catalog/');
       } else {
         const data = res.data.sort(function(a, b) {
-          sortData(b.dateStr) - sortData(a.dateStr);
+          if (sortData(b.dateStr) < sortData(a.dateStr)){ 
+            return -1;
+          } else if (sortData(b.dateStr) > sortData(a.dateStr)){
+            return +1;
+          } else { 
+            return 0;
+          }
         })
         setdaftarKaryawan(data); setdataApi(data);
         interstitial();
@@ -45,6 +51,9 @@ const DaftarCuti = ({f7router}) =>{
   }
   const pdfCutiAct = () => {
     pdfCutii(dataApi);
+  }
+  const cetakx = (data) => {
+    pdf(data);
   }
   useEffect(()=>{
     f7.dialog.progress();
@@ -77,6 +86,7 @@ const DaftarCuti = ({f7router}) =>{
               title={data.nama}
               after={data.uid}
               subtitle={data.bagian}
+              onClick={() => cetakx(data)}
               text={`Cuti ${data.cuti} (${data.dateStr})`}
             ></ListItem>
           )

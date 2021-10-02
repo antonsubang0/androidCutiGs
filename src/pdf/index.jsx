@@ -35,7 +35,7 @@ const pdf = (data) => {
                         text:'',
                         width: 40,
                     },
-                    { text: 'Form Cuti', fontSize: 12, alignment: 'center', margin : [0,-15,0,20] },
+                    { text: 'Pengajuan Cuti', fontSize: 12, alignment: 'center', margin : [0,-15,0,20] },
                 ]
             },
             {
@@ -99,7 +99,7 @@ const pdf = (data) => {
     pdfMake.createPdf(dd).getBase64(async (datapdf) => {
         const datex = new Date();
         FileSharer.share({
-          filename: `Cuti-${datex.toLocaleDateString('id-ID').split('/').join('-')}.pdf`,
+          filename: `Cuti-${data.nama}-${datex.toLocaleDateString('id-ID').split('/').join('-')}.pdf`,
           base64Data: datapdf,
           contentType: "application/pdf",
         })

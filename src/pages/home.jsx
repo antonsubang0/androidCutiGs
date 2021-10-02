@@ -43,7 +43,7 @@ const HomePage = ({ f7router }) => {
   }
   const kirim = () => {
     f7.dialog.preloader();
-    if (codeUid.keperluan=='' || codeUid.dateStr===''){
+    if (codeUid.keperluan==='' || codeUid.dateStr===''){
       f7.dialog.close();
       return f7.dialog.alert('Cek form cuti');
     }
@@ -68,8 +68,7 @@ const HomePage = ({ f7router }) => {
         setcetak(true);
         await interstitial();
       }
-    })
-    .catch(() => f7.dialog.alert('Cek Ulang'));
+    });
   }
   const [cantChange, setcantChange] = useState(false);
   const api = async () =>{

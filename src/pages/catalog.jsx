@@ -18,7 +18,7 @@ const CatalogPage = () => {
     setnilaiInput({...nilaiInput, [name] : value});
   }
   const login = () => {
-    f7.dialog.progress();
+    f7.dialog.preloader();
     axios.post(url + '/login',nilaiInput).then((res) => {
       f7.dialog.close();
       if (res.data.status=='success') {
@@ -28,6 +28,7 @@ const CatalogPage = () => {
         setnotifikasi('Gagal Login');
       }
     }).catch(()=>{
+      f7.dialog.close();
       setnotifikasi('Periksa Jaringan');
     })
   }

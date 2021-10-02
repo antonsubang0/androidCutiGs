@@ -18,8 +18,8 @@ export default function MenuAdmin() {
       </Link>
       <Link href='/karyawan/' color='teal'>
         <Card
-        title="Karyawan"
-        content="Menambah dan menghapus daftar Karyawan PT. Agape."
+        title="Daftar Karyawan"
+        content="Menambah, mengubah dan menghapus daftar Karyawan PT. Agape."
         ></Card>
       </Link>
     </>

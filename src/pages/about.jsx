@@ -7,7 +7,7 @@ const AboutPage = () => (
     <BlockTitle>AGAPE</BlockTitle>
     <Block strong>
       <p>Daftar Cuti Karyawan PT. Agape Diah Persada (PT. CPI Gunungsari)</p>
-      <p>ACPIGS V.1</p>
+      <p>ACPIGS V.2</p>
     </Block>
   </Page>
 );

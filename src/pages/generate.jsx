@@ -48,7 +48,7 @@ const GenerateKodeList = ({f7router}) =>{
       } else {
         await Share.share({
           title: 'Kode Cuti',
-          text: `UID : ${res.data.uid}, Nama : ${e.nama}, Kode : ${res.data.code}. Data tersebut jangan disebarluaskan karena hanya berlaku 1x dan memiliki tenggang selama 12 jam.`,
+          text: `UID : ${res.data.uid}, Nama : ${e.nama}, Kode : ${res.data.code}. Data tersebut jangan disebarluaskan karena hanya berlaku 1x dan memiliki tenggang selama 6 jam.`,
           dialogTitle: 'Share Kode Cuti',
         });
       }

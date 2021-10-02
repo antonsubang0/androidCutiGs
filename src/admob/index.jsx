@@ -1,4 +1,4 @@
-import { AdMob,  AdLoadInfo, InterstitialAdPluginEvents } from '@capacitor-community/admob';
+import { AdMob, InterstitialAdPluginEvents } from '@capacitor-community/admob';
 
 export async function interstitial(){
   AdMob.addListener(InterstitialAdPluginEvents.Loaded, (info) => {
