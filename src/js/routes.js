@@ -9,11 +9,20 @@ import SettingsPage from '../pages/settings.jsx';
 import DaftarKarywan from '../pages/daftarkaryawan.jsx';
 import KarywanD from '../pages/karyawand.jsx';
 import NotFoundPage from '../pages/404.jsx';
+import LoginFix from '../pages/LoginFix.jsx';
+import HomeFix from '../pages/HomeFix.jsx';
 
 var routes = [
   {
     path: '/',
-    component: HomePage,
+    component: LoginFix,
+    options : {
+      clearPreviousHistory : true
+    }
+  },
+  {
+    path: '/homefix/',
+    component: HomeFix,
     options : {
       clearPreviousHistory : true
     }

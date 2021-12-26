@@ -51,3 +51,100 @@
     font-size: 16px;
     font-weight: bold;
 }
+
+/* new */
+.logincss.list {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.svgLogin0 {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+}
+.svgLogin1{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.contenthome{
+    margin-top: -40px;
+    margin-bottom: 30px;
+}
+.cardHomeInfo {
+    position: relative;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgb(12, 114, 12);
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px #333;
+    color: #ffffff;
+}
+.Infonama {
+    font-size: 18px;
+    font-weight: 800;
+    padding-bottom: 7px;
+    text-align: right;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 3px;
+}
+.Infodetail {
+    font-size: 14;
+    font-weight: 700;
+}
+.Infodetail span {
+    font-weight: 400;
+}
+.cutiHome {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.cardHomeInfo1 {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #258;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px #333;
+    color: #ffffff;
+    text-align: center;
+}
+.cardHomeInfo2 {
+    position: relative;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgb(12, 114, 12);
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px #333;
+    color: #ffffff;
+}
+.subjudulhome {
+    margin-top: 5px;
+    font-weight: 700;
+}
+.flexlisthome {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+.cardGaji {
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+.text-red{
+    color: #dd3333;
+}
